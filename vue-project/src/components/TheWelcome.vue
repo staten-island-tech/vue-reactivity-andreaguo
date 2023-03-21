@@ -1,10 +1,7 @@
-<script setup>
-import WelcomeItem from './WelcomeItem.vue'
-</script>
-
 <template>
-  <WelcomeItem>
-
-  </WelcomeItem>
-
+<button>TEST</button>
 </template>
+
+<script>
+export default()
+</script>

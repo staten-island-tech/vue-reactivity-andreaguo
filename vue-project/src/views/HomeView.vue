@@ -13,6 +13,7 @@
   </select>
   <span>{{ selected }}</span>
 </template>
+
 <script>
 export default {
   data() {
