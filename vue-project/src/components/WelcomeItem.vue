@@ -24,3 +24,7 @@ function work(){
   items.forEach((el)=> console.log(el.value))
 }
 </script>
+
+<template>
+  
+</template>
