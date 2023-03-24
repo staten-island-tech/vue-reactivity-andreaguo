@@ -14,6 +14,11 @@
     <label for="sofritas"> Sofritas </label>
     <br/>
     <span>Checked names: {{ checkedNames }}</span>
+    <br/>
+    <input type="checkbox" id="rice" value="White Rice" v-model="checkedNames"/>
+    <label for="white rice"> White Rice </label>
+    <input type="checkbox" id="rice" value="Brown Rice" v-model="checkedNames"/>
+    <label for="brown rice"> Brown Rice </label>
   </div>
   </div>
 </template>
@@ -48,7 +53,7 @@ h1{
 .checkbox{
   margin-right: 1rem;
 }
-#protein{
+#protein, #rice{
   margin: 0.5rem;
 }
 </style>
