@@ -23,12 +23,20 @@ export default{
   components: {},
   data(){
     return{
-      message: "",
-      checkedNames: [],
-    }
-  }
+      selected: '',
+    };
+  },
+  computed: {
+    now: function(){
+      const time = new Date();
+      return `${time.getHours()}:${time.getMinutes()}`;
+    },
+  },
+  methods: {},
 }
 </script>
+
+
 
 <style scoped>
 h1{
