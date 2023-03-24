@@ -1,35 +1,42 @@
 <template>
-    <h1 v-if="selected === 'pink'">Correct Answer</h1>
-    <h1 v-else-if="selected === ''">Select an answer</h1>
-    <h1 v-else>"Wrong"</h1>
-    <h1>{{ student }}</h1>
+  <div class="home">
+    <h1 v-if="graduated">{{ student }}</h1>
+    <h1 v-else>This student was a dropout</h1>
     <ul>
-      <li v-for="animal in animals" :key="animal">{{ animal }}</li>
+      <li v-for="animal in animals"  :key=animal>{{ animal }}</li>
     </ul>
-    <select v-model="selected">
-      <option>pink</option>
-      <option>purple</option>
-      <option>blue</option>
-    </select>
-    <span>{{ selected }}</span>
-  </template>
-  
-  <script scoped>
-  export default {
-    data() {
-      return {
-        student: "Madison Meccia",
-        animals: ["pig", "cow", "kwan", "Zee"],
-        graduated: true,
-        selected: "",
-      };
+    <button v-on:click='authState' v-if="loggedIn">Log out</button>
+    <button v-on:click='authState' v-else>Login</button>
+
+  </div>
+</template>
+
+ <script>
+export default{
+  name:'Home',
+  components: {},
+  data() {
+    return{
+      student: 'Harry',
+      graduated: true,
+      animals: ["pig", 'horse', 'donkey', 'cow', 'duck'],
+      loggedIn:true,
+    };
+  },
+  methods:{
+    authState: function(){
+      if(this.loggedIn === false){
+        this.loggedIn = true;
+      }else{
+        this.loggedIn = false;
+      }
     },
-    methods: {},
-  };
-  </script>
-  <style scoped>
-  h1{
-  color: blueviolet;
-  }
-  
-  </style>
+  },
+}
+</script>
+
+<style scoped>
+h1{
+  color: orange;
+}
+</style>
