@@ -1,10 +1,15 @@
 <template>
   <div class="home">
+
     <h1 v-if="graduated">{{ student }}</h1>
     <h1 v-else>This student was a dropout</h1>
     <ul>
       <li v-for="animal in animals"  :key=animal>{{ animal }}</li>
     </ul>
+    
+    <input type="text" placeholder="edit me" v-model="message"/>
+    <p>{{ message }}</p>
+    
     <button v-on:click='authState' v-if="loggedIn">Log out</button>
     <button v-on:click='authState' v-else>Login</button>
 

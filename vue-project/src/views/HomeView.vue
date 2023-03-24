@@ -1,5 +1,6 @@
 <template>
-  <h1 v-if="selected === 'A'">Correct Answer</h1>
+  <h1>Welcome</h1>
+  <h1 v-if="selected === 'Pick Up'">Correct Answer</h1>
   <h1 v-else-if="selected === ''">Select an answer</h1>
   <h1 v-else>"Wrong"</h1>
   <h1>{{ student }}</h1>
@@ -7,9 +8,9 @@
     <li v-for="animal in animals" :key="animal">{{ animal }}</li>
   </ul>
   <select v-model="selected">
-    <option>A</option>
-    <option>B</option>
-    <option>C</option>
+    <option>Pick Up</option>
+    <option>Delivery</option>
+    <option>Dine in</option>
   </select>
   <span>{{ selected }}</span>
 </template>
@@ -29,7 +30,7 @@ export default {
 </script>
 <style scoped>
 h1{
-color: red;
+color: burlywood;
 }
 
 </style>
