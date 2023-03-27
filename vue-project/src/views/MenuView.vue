@@ -5,26 +5,6 @@
     <img class="bowl" src="https://store.worldcentric.com/SSP%20Applications/NetSuite%20Inc.%20-%20SCA%20Kilimanjaro/Development/img/items/BO-SC-UBB-P_02.png?resizeid=2&resizeh=175&resizew=175" alt="">
 </div>
 <div>
-    <div class="checkbox">
-      <input type="checkbox" id="protein" value="Chicken" v-model="checkedNames"/>
-      <label for="chicken"> Chicken </label>
-      <input type="checkbox" id="protein" value="Steak" v-model="checkedNames"/>
-      <label for="steak"> Steak </label>
-      <input type="checkbox" id="protein" value="Barbacoa" v-model="checkedNames"/>
-      <label for="barbacoa"> Barbacoa </label>
-      <input type="checkbox" id="protein" value="Carnitas" v-model="checkedNames"/>
-      <label for="carnitas"> Carnitas </label>
-      <input type="checkbox" id="protein" value="Sofritas" v-model="checkedNames"/>
-      <label for="sofritas"> Sofritas </label>
-      <br/>
-      <span>Checked names: {{ checkedNames }}</span>
-      <br/>
-      <input type="checkbox" id="rice" value="White Rice" v-model="checkedNames"/>
-      <label for="white rice"> White Rice </label>
-      <input type="checkbox" id="rice" value="Brown Rice" v-model="checkedNames"/>
-      <label for="brown rice"> Brown Rice </label>
-    </div>
-    
     <card 
       v-for="ingredient in ingredients" 
       :key="ingredient.name"
