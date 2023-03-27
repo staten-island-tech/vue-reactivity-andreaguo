@@ -7,11 +7,11 @@
       <li v-for="animal in animals"  :key=animal>{{ animal }}</li>
     </ul>
     
-    <input type="text" placeholder="edit me" v-model="message"/>
+    <input type="text" placeholder="delivery instructions" v-model="message"/>
     <p>{{ message }}</p>
     
-    <button v-on:click='authState' v-if="loggedIn">Log out</button>
-    <button v-on:click='authState' v-else>Login</button>
+    <button v-on:click='authState' v-if="submit">submit</button>
+    <button v-on:click='authState' v-else>edit</button>
 
   </div>
 </template>
@@ -25,15 +25,15 @@ export default{
       student: 'Harry',
       graduated: true,
       animals: ["pig", 'horse', 'donkey', 'cow', 'duck'],
-      loggedIn:true,
+      submit:true,
     };
   },
   methods:{
     authState: function(){
-      if(this.loggedIn === false){
-        this.loggedIn = true;
+      if(this.submit === false){
+        this.submit = true;
       }else{
-        this.loggedIn = false;
+        this.submit = false;
       }
     },
   },
