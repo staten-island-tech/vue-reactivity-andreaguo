@@ -8,7 +8,7 @@
     <p>selected:{{ selected }}</p>
   </div>
 <div>
-    <card 
+    <card @selected="(msg) => addRemove"
       v-for="ingredient in ingredients" 
       :key="ingredient.name"
       :title="ingredient.name"
@@ -46,6 +46,7 @@ export default{
           price: 0,
           calories: "210 cal",
           img: "https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-5001-white-rice/web-mobile/order.png",
+          style: "top: 70px; left: 20px; height: 10rem;"
         },
         {
           name: "BLACK BEANS",
@@ -172,7 +173,15 @@ export default{
       return `${time.getHours()}:${time.getMinutes()}`;
     },
   },
-  methods: {},
+  methods: {
+    addRemove: function(topping){
+      if (selected.includes(topping)) {
+        // splice, indexOf
+      } else {
+        
+      }
+    }
+  },
 }
 </script>
 

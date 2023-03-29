@@ -3,9 +3,9 @@
         <h2>{{ title }}</h2>
         <img class="topping" :src="image" alt="">
         <h3>{{ price }}</h3>
-        <input type="checkbox" id="topping" :value="title" v-model="selected"/>
+        <input type="checkbox" id="topping" :value="title" v-model="selected" @click="$emit('selected', title)"/>
       <label :for="title"> {{ title }} </label>
-      <span>{{ selected }}</span>
+      <span>selected{{ selected }}</span>
     </div>
 </template>
 
