@@ -2,8 +2,11 @@
   <div class="about">
     <div>
     <h1>Place your order here:</h1>
-    <img class="bowl" src="https://store.worldcentric.com/SSP%20Applications/NetSuite%20Inc.%20-%20SCA%20Kilimanjaro/Development/img/items/BO-SC-UBB-P_02.png?resizeid=2&resizeh=175&resizew=175" alt="">
-</div>
+    <images
+    :img="ingredients.img"
+    />
+    <p>selected:{{ selected }}</p>
+  </div>
 <div>
     <card 
       v-for="ingredient in ingredients" 
@@ -13,22 +16,49 @@
       :image="ingredient.img"
       />
   </div>
+      
   </div>
 </template>
 
 <script>
 
 import card from "../components/card.vue";
+import images from "../components/images.vue"
 
 export default{
   name: 'about',
   components: {
     card,
+    images,
   },
   data(){
-    return{
-      selected: "",
+    return{ 
+      selected: [],
       ingredients: [
+        {
+          name: "BROWN RICE",
+          price: 0,
+          calories: "210 cal",
+          img: "https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-5002-brown-rice/web-mobile/order.png",
+        },
+        {
+          name: "WHITE RICE",
+          price: 0,
+          calories: "210 cal",
+          img: "https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-5001-white-rice/web-mobile/order.png",
+        },
+        {
+          name: "BLACK BEANS",
+          price: 0,
+          calories: "130 cal",
+          img: "https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-5051-black-beans/web-mobile/order.png",
+        },
+        {
+          name: "PINTO BEANS",
+          price: 0,
+          calories: "130 cal",
+          img: "https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-5052-pinto-beans/web-mobile/order.png",
+        },
         {
           name: "CHICKEN AL PASTOR",
           price: 11.60,
@@ -71,36 +101,8 @@ export default{
           calories: "0 cal",
           img: "https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-1025-large-side-of-guac/web-mobile/order.png",
         },
-        {
-          name: "BROWN RICE",
-          price: 0,
-          calories: "210 cal",
-          img: "https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-5002-brown-rice/web-mobile/order.png",
-        },
-        {
-          name: "WHITE RICE",
-          price: 0,
-          calories: "210 cal",
-          img: "https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-5001-white-rice/web-mobile/order.png",
-        },
-        {
-          name: "BLACK BEANS",
-          price: 0,
-          calories: "130 cal",
-          img: "https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-5051-black-beans/web-mobile/order.png",
-        },
-        {
-          name: "PINTO BEANS",
-          price: 0,
-          calories: "130 cal",
-          img: "https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-5052-pinto-beans/web-mobile/order.png",
-        },
-        {
-          name: "GUACAMOLE",
-          price: 2.95,
-          calories: "230 cal",
-          img: "https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-1025-large-side-of-guac/web-mobile/order.png",
-        },
+        
+
         {
           name: "FRESH TOMATO SALSA",
           price: 0,
@@ -155,7 +157,13 @@ export default{
           calories: "120 cal",
           img: "https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-1031-large-side-of-queso-blanco/web-mobile/order.png",
         },
-      ]
+        {
+          name: "GUACAMOLE",
+          price: 2.95,
+          calories: "230 cal",
+          img: "https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-1025-large-side-of-guac/web-mobile/order.png",
+        },
+      ],
     };
   },
   computed: {
@@ -180,10 +188,6 @@ h1{
 }
 #protein, #rice{
   margin: 0.5rem;
-}
-
-.bowl{
-  height: 20rem;
 }
 
 

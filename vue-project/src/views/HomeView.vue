@@ -13,9 +13,15 @@
     <option>Dine in</option>
   </select>
   <span>{{ selected }}</span>
+
+  <h2>{{ now }}</h2>
+  <Button @test-click="hello">day</Button>
+  <Button @test-click="bye">night</Button>
+
 </template>
 
 <script>
+import Button from "../components/Button.vue"
 export default {
   data() {
     return {
@@ -25,7 +31,23 @@ export default {
       selected: "",
     };
   },
-  methods: {},
+  components: {
+    Button,
+  },
+  computed: {
+    now: function(){
+      const time= new Date();
+      return `${time.getHours()}: ${time.getMinutes()}`
+    }
+  },
+  methods: {
+    hello: function(){
+      alert('hello');
+    },
+    bye: function(){
+      alert('goodbye')
+    }
+  },
 };
 </script>
 <style scoped>
