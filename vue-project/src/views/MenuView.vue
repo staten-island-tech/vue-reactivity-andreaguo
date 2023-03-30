@@ -5,10 +5,10 @@
     <images
     :img="ingredients.img"
     />
-    <p>selected:{{ selected }}</p>
+    <p>selected:{{ store.array }}</p>
   </div>
 <div>
-    <card @selected="(msg) => addRemove"
+    <card 
       v-for="ingredient in ingredients" 
       :key="ingredient.name"
       :title="ingredient.name"
@@ -22,6 +22,8 @@
 
 <script>
 
+import { store } from '../store.js'
+
 import card from "../components/card.vue";
 import images from "../components/images.vue"
 
@@ -33,6 +35,7 @@ export default{
   },
   data(){
     return{ 
+      store,
       selected: [],
       ingredients: [
         {
@@ -176,6 +179,7 @@ export default{
   methods: {
     addRemove: function(topping){
       if (selected.includes(topping)) {
+        this.selected.indexOf('topping')
         // splice, indexOf
       } else {
         

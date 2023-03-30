@@ -3,18 +3,20 @@
         <h2>{{ title }}</h2>
         <img class="topping" :src="image" alt="">
         <h3>{{ price }}</h3>
-        <input type="checkbox" id="topping" :value="title" v-model="selected" @click="$emit('selected', title)"/>
+        <input type="checkbox" id="topping" :value="title" v-model="selected" @click="store.array.push(title)"/>
       <label :for="title"> {{ title }} </label>
       <span>selected{{ selected }}</span>
     </div>
 </template>
 
 <script>
+import { store } from '../store.js'
+
 export default{
     name:"card",
     data(){
         return{
-            selected:[],
+            store,
         };
     },
     props: {
@@ -29,7 +31,7 @@ export default{
 .card{
     width: 45%;
     background-color: bisque;
-    height:200px;
+    height:300px;
     margin: 10px auto;
     color: rgb(150, 95, 23);
     font-size: 2vh;
