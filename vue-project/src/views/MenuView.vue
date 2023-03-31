@@ -16,7 +16,7 @@
       :image="ingredient.img"
       />
   </div>
-      
+
   </div>
 </template>
 
@@ -36,7 +36,6 @@ export default{
   data(){
     return{ 
       store,
-      selected: [],
       ingredients: [
         {
           name: "BROWN RICE",
