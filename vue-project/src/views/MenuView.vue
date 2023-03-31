@@ -11,9 +11,7 @@
     <card 
       v-for="ingredient in ingredients" 
       :key="ingredient.name"
-      :title="ingredient.name"
-      :price="ingredient.price"
-      :image="ingredient.img"
+      :ingredient="ingredient"
       />
   </div>
 

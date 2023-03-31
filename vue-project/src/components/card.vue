@@ -1,14 +1,12 @@
  <template>
     <div class="card">
-        <h2>{{ title }}</h2>
-        <img class="topping" :src="image" alt="">
-        <h3>{{ price }}</h3>
-        <input type="checkbox" id="topping" :value="title" v-model="selected" @click="store.array.push(title)"/>
-        <label :for="title"> {{ title }} </label>
+        <h2>{{ ingredient.name }}</h2>
+        <input type="checkbox" id="checkbox" :value="ingredient.title" v-model="selected" @click="remove(ingredient)"/>
+        <label :for="ingredient.title"> {{ ingredient.title }} </label>
+        <img class="topping" :src="ingredient.img" alt="">
+        <h3>${{ ingredient.price }}</h3>
+
         <!-- <checkbox @selection="remove"></checkbox> -->
-        <div>
-        <span>checked: {{ selected }}</span>
-    </div>
     </div>
 
 </template>
@@ -28,19 +26,18 @@ export default{
     // components:{
     //     checkbox,
     props: {
-        title: String,
-        price: Number,
-        image: String,
+        ingredient: Object,
     },
     methods: {
-        remove: function(){
+        remove: function(topping){
             const array = store.array
-            if (array.includes(selected)) {
-                let index = array.indexOf(selected)
+            console.log(array.includes( ))
+            if (array.includes(topping)) {
+                let index = array.indexOf(topping)
                 array.splice(index, 1)
                 console.log(array)
             } else {
-                array.push(selected)
+                array.push(topping)
             }
         }
     }
@@ -61,4 +58,5 @@ export default{
 img{
     height: 10vh;
 }
+
 </style>
