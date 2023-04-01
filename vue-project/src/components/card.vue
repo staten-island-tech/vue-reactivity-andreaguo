@@ -44,14 +44,14 @@ export default{
 .card{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width: 60%;
-    background-color: bisque;
+    width: 95%;
+    background-color: rgba(80, 53, 14, 0.95);
     height: 30vh;
     margin: 10px auto;
-    color: rgb(150, 95, 23);
-    font-size: 2vh;
+    color: rgb(223, 187, 141);
+    font-size: 1rem;
     padding: 1rem;
     border-radius: 15px;
 }
@@ -60,8 +60,7 @@ img{
 }
 @media (min-width: 1024px) {
     .card{
-        width: 50%;
-        margin: 30px auto;
+        margin: 1vh auto;
     }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>Welcome</h1>
+    <h1 class="welcome">Welcome</h1>
   </header>
   <h1 v-if="selected === 'Pick Up'">Correct Answer</h1>
   <h1 v-else-if="selected === ''">Select an answer</h1>
@@ -52,20 +52,36 @@ export default {
 </script>
 <style scoped>
 header{
-  color: rgb(180, 72, 117);
+  position: relative;
   height: 100vh;
-  background-color: rgb(243, 178, 178);
   height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 3rem;
-    text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header::before{
+  content:"";
+  background-image: url('https://cdn.vox-cdn.com/thumbor/IgTjvMMfD-LBxQFSMNE6NXOeFL4=/0x0:3008x2000/1200x800/filters:focal(1264x760:1744x1240)/cdn.vox-cdn.com/uploads/chorus_image/image/65831693/shutterstock_1306226335.0.jpg');
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 50%
 
 }
 
+.welcome{
+  position: relative;
+  color: white;
+  font-size: 5rem;
+  text-shadow: black 1px 0 10px;  
+  text-align: center;
 
+
+}
 </style>

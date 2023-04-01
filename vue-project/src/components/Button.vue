@@ -11,13 +11,15 @@ export default{
 <style scoped>
 button{
     width: 200px;
-    font-size: 30px;
-    border-radius: 15px;
+    font-size: 1.5rem;
+    border-radius: 40px;
     border: none;
-    background-color: rosybrown;
-    color: rgb(100, 44, 44);
+    background-color: rgba(80, 53, 14);
+    color: rgb(223, 187, 141);
     transition: 0.3s;
     margin: 10px auto;
+    margin-top: 3rem;
+    padding: 3vh;
 }
 button:hover{
     transform: scale(1.1);

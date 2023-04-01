@@ -20,7 +20,7 @@
       :key="ingredient.name"
       :ingredient="ingredient"
       />
-      <Button @click="store.cart.push(store.array)">complete</Button>
+      <Button @click="store.cart.push(store.array)"> COMPLETE </Button>
   </div>
 
   </div>
@@ -234,13 +234,14 @@ h1{
     justify-content: center;
     align-items: center;
 }
-
-.about{
-  height: 750vh;
+/* parent div */
+.about{  
+  height: 700vh;
   display: flex;
   margin: 0;
 }
 
+/* static div */
 .orderImg{
   width: 50%;
   height:100vh;
@@ -252,14 +253,16 @@ h1{
   margin: 0;
 }
 
+/* scrolling div */
 .options{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 50%;
-  background-color: azure;
+  background-image: url('https://i.pinimg.com/originals/41/de/1a/41de1ad0b9d49c05bd53c0e864393058.jpg');
 }
+
 .options div{
   display: flex;
     flex-direction: column;
