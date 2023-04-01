@@ -1,22 +1,39 @@
 <template>
     <div class="images">
-    <img class="bowl" src="https://store.worldcentric.com/SSP%20Applications/NetSuite%20Inc.%20-%20SCA%20Kilimanjaro/Development/img/items/BO-SC-UBB-P_02.png?resizeid=2&resizeh=175&resizew=175" alt="">
-    <img class="riceOne" src="https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-5002-brown-rice/web-mobile/order.png" alt="">
-    <img class="riceTwo" src="https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-5002-brown-rice/web-mobile/order.png" alt="">
-    <img class="riceThree" src="https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-5002-brown-rice/web-mobile/order.png" alt="">
-    <img class="beans" src="https://www.chipotle.com/content/dam/chipotle/global/menu/menu-items/cmg-5052-pinto-beans/web-mobile/order.png" alt="">
-    <img class="protein" src="https://www.chipotle.fr/content/dam/chipotle/global-site-design/en/menu/menu-items/in-store/menu-items/chicken/primary/chicken.png" alt="">
+    <div v-if="selectedIngr.type === 'rice'">
+      <img class="riceOne" :src="selectedIngr.img" alt="">
+      <img class="riceTwo" :src="selectedIngr.img" alt="">
+      <img class="riceThree" :src="selectedIngr.img" alt="">
+    </div>
+    <!-- <div v-else-if="selectedIngr.type ==='sauce'">
+      <img class="sauce" :src="selectedIngr.img" alt="">
+    </div> -->
+    <div v-else>
+      <img class="otherOne" :src="selectedIngr.img" alt="">
+      <img class="otherTwo" :src="selectedIngr.img" alt="">
+
+    </div>
+    
+
 </div>
 </template>
 
 
 
 <script>
-export default{
+import { store } from '../store.js'
 
-    // props: {
-    //     img: String,
-    // },
+export default{
+  name: "images",
+  data(){
+    return{
+      store,
+    };
+  },
+  props: {
+    selectedIngr: Object,
+    },
+  methods:{},
 }
 </script>
 
@@ -27,48 +44,53 @@ export default{
   left: 0;
 }
 .bowl{
-    position: relative;
-  height: 20rem;
-  top: 0;
-  left: 0;
-  /* display: flex;
-  align-items: center; */
-  z-index: 3;
+  position: relative;
+  height: 25rem;
+  top: 2rem;
+  left: 1rem;
+  z-index: 0;
 }
 
 .riceOne {
-    position: absolute;
-    top: 70px;
-    left: 20px;
-    height: 10rem;
-  z-index: 3;
+  position: absolute;
+  top: -4rem;
+  left: 2rem;
+  z-index: 1;
+  height: 13rem;
 }
 .riceTwo {
-    position: absolute;
-    top: 70px;
-    left: 130px;
-    height: 10rem;
-  z-index: 3;
+  position: absolute;
+  top: -4rem;
+  left: 7rem;
+  z-index: 1;
+  height: 13rem;
 }
 .riceThree{
-    position: absolute;
-    top: 80px;
-    left: 80px;
-    height: 10rem;
-  z-index: 3;
+  position: absolute;
+  top: -4rem;
+  left: 12rem;
+  z-index: 1;
+  height: 13rem;
 }
-.beans{
-    position: absolute;
-    top: 80px;
-    left: 80px;
-    height: 10rem;
-  z-index: 3;
+.sauce{
+  position: absolute;
+  top: -4rem;
+  left: 20rem;
+  height: 10rem;
+  z-index: 2;
 }
-.protein{
-    position: absolute;
-    top: 80px;
-    left: 80px;
-    height: 10rem;
-  z-index: 3;   
+.otherOne{
+  position: absolute;
+  top: -4rem;
+  left: 10rem;
+  height: 13rem;
+  z-index: 2;
+}
+.otherTwo{
+  position: absolute;
+  top: -4rem;
+  left: 4rem;
+  height: 13rem;
+  z-index: 2;
 }
 </style>

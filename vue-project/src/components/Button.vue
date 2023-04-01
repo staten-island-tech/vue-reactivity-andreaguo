@@ -4,7 +4,7 @@
 
 <script>
 export default{
-    name: "button",
+    name: "Button",
 }
 </script>
 
@@ -12,16 +12,17 @@ export default{
 button{
     width: 200px;
     font-size: 30px;
-    border-radius: 20px;
+    border-radius: 15px;
     border: none;
     background-color: rosybrown;
     color: rgb(100, 44, 44);
     transition: 0.3s;
+    margin: 10px auto;
 }
 button:hover{
     transform: scale(1.1);
 }
 button:active{
-    transform: scale(0.6);
+    transform: scale(0.9);
 }
 </style>
