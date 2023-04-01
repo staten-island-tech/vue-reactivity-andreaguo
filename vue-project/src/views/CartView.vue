@@ -11,13 +11,17 @@
 
   </div>
   <div class="priceSummary">
-    <p v-for="ingredient in store.cart"
-    :key="ingredient.name"> {{ ingredient.price }}</p>
-
+    <h1 class="head">Summary</h1>
+    <price v-for="ingredient in store.array"
+    :key="ingredient.name"
+    :ingredient="ingredient"/>
+    <div class="input">
     <input type="text" placeholder="delivery instructions" v-model="message"/>
       <!-- <p>{{ message }}</p> -->
     <button v-on:click='authState' v-if="submit">submit</button>
     <button v-on:click='authState' v-else>edit</button>
+    </div>
+    
   </div>
   </div>
 </template>
@@ -25,12 +29,13 @@
  <script>
 import { store } from '../store.js'
 import images from "../components/images.vue"
-
+import price from "../components/price.vue"
 
 export default{
   name:'Home',
   components: {
     images,
+    price,
   },
   data() {
     return{
@@ -70,15 +75,20 @@ section{
 
 } 
 .priceSummary{
+  display: flex;
+  flex-direction: column;
   background-color: wheat;
   width: 30%;
-  height: 50vh;
+  height: 70vh;
   display: flex;
   position: sticky;
-  top: 0;
-  justify-content: center;
+  top: 20vh;
   align-items: center;
-  margin: 0;
+  margin: 3rem;
+  border-radius: 15px;
+}
+.head{
+  color: brown;
 }
 
 </style>
