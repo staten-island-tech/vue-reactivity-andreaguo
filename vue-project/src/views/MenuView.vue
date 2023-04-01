@@ -1,6 +1,6 @@
 <template>
-  <h1>Place your order here:      
-</h1>
+  <header> Place your order here:</header>
+
   <div class="about">
     <div class="orderImg">
 
@@ -11,20 +11,22 @@
     :selectedIngr="item"
     />
 
-    <img class="bowl" src="https://store.worldcentric.com/SSP%20Applications/NetSuite%20Inc.%20-%20SCA%20Kilimanjaro/Development/img/items/BO-SC-UBB-P_02.png?resizeid=2&resizeh=175&resizew=175" alt="">
+    <img class="bowl" src="https://store.worldcentric.com/SSP%20Applications/NetSuite%20Inc.%20-%20SCA%20Kilimanjaro/Development/img/items/BO-SC-UBBS-P_02.png?resizeid=2&resizeh=175&resizew=175" alt="">
 
   </div>
-  <div class="options">    <Button>complete</Button>
-
+  <div class="options">    
     <card 
       v-for="ingredient in ingredients" 
       :key="ingredient.name"
       :ingredient="ingredient"
       />
+      <Button @click="store.cart.push(store.array)">complete</Button>
   </div>
-  <footer>cool</footer>
 
   </div>
+  <section class="footer">
+
+  </section>
 </template>
 
 <script>
@@ -205,9 +207,32 @@ export default{
 
 
 <style scoped>
+body {
+    display: flex;
+    place-items: center;
+  }
+header{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(139, 97, 46);
+    color: white;
+    font-size: 5rem;
+}
+
 h1{
-  color: white;
-  font-size: 1.5rem;
+  color: maroon;
+  text-align: center;
+
+}
+#subtitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .about{
@@ -228,14 +253,22 @@ h1{
 }
 
 .options{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 50%;
+  background-color: azure;
 }
 .options div{
   display: flex;
     flex-direction: column;
     align-items: center;
 }
-
+.footer{
+  height: 90vh;
+  background-color: blanchedalmond;
+}
 
 @media (min-width: 1024px) {
   body {

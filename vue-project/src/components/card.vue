@@ -1,7 +1,7 @@
  <template>
     <div class="card">
         <h2>{{ ingredient.name }}
-        <input type="checkbox" id="checkbox" :value="ingredient.title" v-model="selected" @click="remove(ingredient)"/>
+        <input type="checkbox" id="checkbox" :value="ingredient.title" @click="remove(ingredient)"/>
         <label :for="ingredient.title"> {{ ingredient.title }} </label>
         </h2>
         <img :src="ingredient.img" alt="">

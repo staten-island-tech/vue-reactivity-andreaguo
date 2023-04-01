@@ -1,12 +1,7 @@
 <template>
   <div class="home">
+    <p>{{ store.cart }}</p>
 
-    <h1 v-if="graduated">{{ student }}</h1>
-    <h1 v-else>This student was a dropout</h1>
-    <ul>
-      <li v-for="animal in animals"  :key=animal>{{ animal }}</li>
-    </ul>
-    
     <input type="text" placeholder="delivery instructions" v-model="message"/>
     <p>{{ message }}</p>
     
@@ -17,14 +12,14 @@
 </template>
 
  <script>
+import { store } from '../store.js'
+
 export default{
   name:'Home',
   components: {},
   data() {
     return{
-      student: 'Harry',
-      graduated: true,
-      animals: ["pig", 'horse', 'donkey', 'cow', 'duck'],
+      store,
       submit:true,
     };
   },
