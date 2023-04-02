@@ -1,6 +1,6 @@
 <template>
     <div class="price">
-        <p>{{ calc(ingredient) }}</p>
+        <p>{{ calc(item) }}</p>
     </div>
 </template>
 
@@ -15,22 +15,14 @@ export default{
         };
     },
     props: {
-        ingredient: Object,
+        item: Object,
     },
     methods:{
-        calc: function(ingredient){
-            // const array = store.bBowl
-            // const order = store.order
-            // array.push(ingredient.price)
-            // let sum = array.reduce((a, b) => a + b, 0);
-            // order.push(sum);
-            let arr = [];
-            let order = store.bBowl
-            arr.push(ingredient.price)
-            let sum = arr.reduce((a, b) => a + b, 0);
-            order.push(sum)
-            console.log(sum)
-        }
+    calc(item){
+      let arr = store.bBowl;
+      arr.push(item.price)
+      return arr
+    } 
     }
 }
 </script>

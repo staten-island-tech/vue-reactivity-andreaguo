@@ -1,5 +1,5 @@
 <template>
-  <header> Place your order here:</header>
+  <header> DESIGN YOUR VERY OWN BOWL</header>
 
   <div class="about">
     <div class="orderImg">
@@ -20,7 +20,7 @@
       :key="ingredient.name"
       :ingredient="ingredient"
       />
-      <Button @click="store.cart.push(store.array)"> COMPLETE </Button>
+      <Button @click="store.cart.push(store.array); store.bBowl.push(ingredient.price)"> COMPLETE </Button>
   </div>
 
   </div>
@@ -221,6 +221,7 @@ header{
     background-color: rgb(139, 97, 46);
     color: white;
     font-size: 5rem;
+    text-shadow: rgb(34, 24, 11) 1px 0 20px;
 }
 
 h1{

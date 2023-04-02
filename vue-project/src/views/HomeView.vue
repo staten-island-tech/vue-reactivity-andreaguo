@@ -1,22 +1,12 @@
 <template>
   <header>
-    <h1 class="welcome">Welcome</h1>
+    <h1 class="welcome">WELCOME</h1>
   </header>
-  <h1 v-if="selected === 'Pick Up'">Correct Answer</h1>
-  <h1 v-else-if="selected === ''">Select an answer</h1>
-  <h1 v-else>"Wrong"</h1>
-  <h1>{{ student }}</h1>
 
-  <select v-model="selected">
-    <option>Pick Up</option>
-    <option>Delivery</option>
-    <option>Dine in</option>
-  </select>
-  <span>{{ selected }}</span>
 
-  <h2>{{ now }}</h2>
+  <!-- <h2>{{ now }}</h2>
   <Button @test-click="hello">day</Button>
-  <Button @test-click="bye">night</Button>
+  <Button @test-click="bye">night</Button> -->
 
 </template>
 
