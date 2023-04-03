@@ -48,6 +48,7 @@ header{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: black;
 }
 
 header::before{
@@ -59,7 +60,7 @@ header::before{
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 50%
+  opacity: 60%
 
 }
 
@@ -71,5 +72,10 @@ header::before{
   text-align: center;
   font-family: 'Caveat', cursive;
 font-family: 'Fredericka the Great', cursive;
+}
+
+body{
+  background-color: black;
+  z-index: 2;
 }
 </style>

@@ -79,7 +79,7 @@ h1,h2{
   height: 150vh;
   display: flex;
   margin: 0;
-  
+  background-color: black;
 }
 .home::before{
   content: '';
@@ -90,12 +90,12 @@ h1,h2{
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 20%;
+  opacity: 40%;
 
 }
 section{
   margin-left: 2rem;
-  margin-top: 6rem;
+  margin-top: 8rem;
   height: 20vh;
   font-size: 3vh;
   color: white;
