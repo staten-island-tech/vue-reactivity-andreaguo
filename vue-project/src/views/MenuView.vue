@@ -262,12 +262,15 @@ h1{
   align-items: center;
   width: 50%;
   background-image: url('https://i.pinimg.com/originals/41/de/1a/41de1ad0b9d49c05bd53c0e864393058.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .options div{
   display: flex;
-    flex-direction: column;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 .footer{
   height: 90vh;
