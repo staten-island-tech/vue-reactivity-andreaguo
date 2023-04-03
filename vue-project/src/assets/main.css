@@ -24,16 +24,19 @@ nav {
 
 a,
 .brown {
-  font-size: 4vh;
-  color: rgb(155, 98, 46);
+  font-size: 5vh;
+  color: rgb(229, 206, 183);
   transition: 0.4s;
   padding: 1vh;
   width: 32%;
+  font-family: 'Caveat', cursive;
+font-family: 'Fredericka the Great', cursive;
 }
 
 @media (hover: hover) {
   a:hover {
     background-color: white;
+    color: rgb(0, 0, 0);
     padding: 1vh;
     }
 }

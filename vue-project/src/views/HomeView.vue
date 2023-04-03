@@ -1,7 +1,8 @@
 <template>
-  <header>
+   <header>
     <h1 class="welcome">WELCOME</h1>
   </header>
+
 
 
   <!-- <h2>{{ now }}</h2>
@@ -11,7 +12,6 @@
 </template>
 
 <script>
-import Button from "../components/Button.vue"
 export default {
   name: "home",
   data() {
@@ -21,9 +21,7 @@ export default {
       selected: "",
     };
   },
-  components: {
-    Button,
-  },
+
   computed: {
     now: function(){
       const time= new Date();
@@ -71,7 +69,7 @@ header::before{
   font-size: 5rem;
   text-shadow: black 1px 0 10px;  
   text-align: center;
-
-
+  font-family: 'Caveat', cursive;
+font-family: 'Fredericka the Great', cursive;
 }
 </style>

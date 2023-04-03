@@ -3,7 +3,7 @@
     <div class="items">
     <section>
       <h1>Items in your cart:</h1>
-      <p>{{ store.cart }}</p>
+      <p>{{ store.order }}</p>
         
     </section>   
 
@@ -16,8 +16,7 @@
     <price v-for="ingredient in store.array"
     :key="ingredient.name"
     :item="ingredient"/>
-    <!-- <h1>{{ calc(ingredient) }}</h1> -->
-    
+    <h2 class="print">${{ store.bBowl.reduce((a, b) => a + b, 0) }}</h2>
 
     <div class="inputA">
     <input type="text" placeholder="name" v-model="name"/>
@@ -71,9 +70,13 @@ export default{
 </script>
 
 <style scoped>
+h1,h2{
+  font-family: 'Caveat', cursive;
+  font-family: 'Fredericka the Great', cursive;
+}
 .home{
   position: relative;
-  height: 100vh;
+  height: 150vh;
   display: flex;
   margin: 0;
   
@@ -117,8 +120,17 @@ section{
   margin: 3rem;
   border-radius: 15px;
 }
+h1{
+  font-size: 2rem;
+}
 .head{
-  color: brown;
+  color: rgb(88, 25, 25);
+  top: 5%;
+}
+.print{
+  color: rgb(88, 25, 25);
+  position: absolute;
+  top: 40%;
 }
 .inputA{
   position: absolute;

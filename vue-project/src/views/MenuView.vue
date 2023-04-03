@@ -1,5 +1,5 @@
 <template>
-  <header> DESIGN YOUR VERY OWN BOWL</header>
+  <header>DESIGN YOUR VERY OWN BOWL</header>
 
   <div class="about">
     <div class="orderImg">
@@ -218,10 +218,13 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     background-color: rgb(139, 97, 46);
     color: white;
-    font-size: 5rem;
+    font-size: 3rem;
     text-shadow: rgb(34, 24, 11) 1px 0 20px;
+    font-family: 'Caveat', cursive;
+    font-family: 'Fredericka the Great', cursive;
 }
 
 h1{

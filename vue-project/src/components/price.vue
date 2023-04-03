@@ -1,6 +1,6 @@
 <template>
     <div class="price">
-        <p>{{ calc(item) }}</p>
+        {{ push(item.price, item.name) }}
     </div>
 </template>
 
@@ -8,7 +8,7 @@
 import { store } from '../store.js'
 
 export default{
-    name: 'price',
+    name: "price",
     data(){
         return{
             store,
@@ -18,17 +18,16 @@ export default{
         item: Object,
     },
     methods:{
-    calc(item){
-      let arr = store.bBowl;
-      arr.push(item.price)
-      return arr
-    } 
+        push(price, name){
+            store.bBowl.push(price)
+            store.order.push(name)
+        }
     }
 }
 </script>
 
-<style>
+<style scoped>
 .price{
-    color: brown;
+    color: transparent;
 }
 </style>
